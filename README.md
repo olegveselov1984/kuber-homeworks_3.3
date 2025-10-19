@@ -206,6 +206,21 @@ kube-system   metrics-server-7dbd8b5cc9-sfdqt              1/1     Running   20 
 ```
 kubectl exec --namespace app -it netology-deployment01-784c5b8b79-hxcsv -- /bin/bash
 ```
+Проверяем доступность сервисов
+
+С front back доступен:
+```
+netology-deployment01-784c5b8b79-hxcsv:/# telnet 10.1.243.254 8082
+Connected to 10.1.243.254
+```
+Cash не доступен
+```
+netology-deployment01-784c5b8b79-hxcsv:/# telnet 10.1.243.208 8083
+^C
+```
+
+<img width="1112" height="231" alt="image" src="https://github.com/user-attachments/assets/f1cbd8b6-e086-4374-9731-a5c7d1214941" />
+
 
 
 
