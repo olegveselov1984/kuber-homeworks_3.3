@@ -19,6 +19,35 @@
 ### Задание 1. Создать сетевую политику или несколько политик для обеспечения доступа
 
 1. Создать deployment'ы приложений frontend, backend и cache и соответсвующие сервисы.
+
+'''
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: netology-deployment01
+  labels:
+    app: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: network-multitool
+        image: wbitt/network-multitool
+        env:
+          - name: HTTP_PORT
+            value: "8081"
+
+
+'''
+
+
 2. В качестве образа использовать network-multitool.
 3. Разместить поды в namespace App.
 4. Создать политики, чтобы обеспечить доступ frontend -> backend -> cache. Другие виды подключений должны быть запрещены.
