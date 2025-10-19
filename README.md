@@ -20,7 +20,7 @@
 
 1. Создать deployment'ы приложений frontend, backend и cache и соответсвующие сервисы.
 
-'''
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -44,8 +44,8 @@ spec:
           - name: HTTP_PORT
             value: "8081"
 
+```
 
-'''
 
 
 2. В качестве образа использовать network-multitool.
