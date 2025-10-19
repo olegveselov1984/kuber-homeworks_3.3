@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: netology-deployment03
+  labels:
+    app: cache 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cache 
+  template:
+    metadata:
+      labels:
+        app: cache 
+    spec:
+      containers:
+      - name: network-multitool
+        image: wbitt/network-multitool
+        env:
+          - name: HTTP_PORT
+            value: "8083"

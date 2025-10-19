@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-svc
+spec:
+  ports:
+  - name: backend-svc
+    protocol: TCP
+    port: 8082
+    targetPort: 8082
+  selector:
+    app: backend
+  type: ClusterIP # Можно не писать, по умолчанию
